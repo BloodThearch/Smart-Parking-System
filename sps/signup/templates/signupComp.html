@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Smart Parking System: Sign Up Completed{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+<div class="row text-center justify-content-center align-items-center" style="height: 650px;">
+    <div class="col-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 base-card">
+        <h4>Congratulations!</h4><br>
+        <small>You have successfully signed up for smart parking system service. 
+            Please click the button bellow to go back to home page and login to start using our service.</small>
+        <a href="{% url 'home' %}">
+            <button class="btn btn-outline-light btn-lg m-3">
+                Home
+            </button>
+        </a><br>
+
+    </div>
+</div>
+
+<div class="row" >
+</div>
+{% endblock body %}
+
+{% block js %}{% endblock js %}

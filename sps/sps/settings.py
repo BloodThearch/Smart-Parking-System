@@ -83,9 +83,11 @@ WSGI_APPLICATION = 'sps.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE':   'django.db.backends.oracle',
+        'NAME':     'localhost/orcl',
+        'USER':     'astralsaint',
+        'PASSWORD': 'sdssha786#',
+  }
 }
 
 
