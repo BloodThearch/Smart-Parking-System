@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Smart Parking System: Home Page{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+<div class="row text-center justify-content-center align-items-center" style="height: 650px;">
+    <div class="col-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 base-card">
+
+        <h4>Log In</h4><br>
+
+        <label for="basic-url" class="form-label d-flex justify-content-start">Enter Mobile Number:</label>
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon1" placeholder="Mobile">
+        </div>
+
+        <label for="basic-url" class="form-label d-flex justify-content-start">Enter Password:</label>
+        <div class="input-group mb-3">
+        <input type="password" class="form-control" id="basic-url" aria-describedby="basic-addon1" placeholder="Password">
+        </div>
+
+        <small>
+            Don't have an account? <a href="{% url 'signupPage' %}"><u>Click here</u></a>, to signup.
+        </small>
+
+        <button class="btn btn-outline-light btn-lg m-3">
+            Submit
+        </button><br>
+
+    </div>
+</div>
+
+<div class="row" >
+</div>
+{% endblock body %}
+
+{% block js %}{% endblock js %}
