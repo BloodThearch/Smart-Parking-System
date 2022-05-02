@@ -1,5 +1,6 @@
 from pickle import NONE
 from django.shortcuts import render
+from django.contrib import messages
 from login.models import Account
 from .forms import SignUpForm
 

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Smart Parking System: Wrong Password{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+<div class="row text-center justify-content-center align-items-center" style="height: 650px;">
+    <div class="col-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 base-card">
+
+        <h4>Incorrect password. Click the button bellow to go back to login page.</h4><br>
+        <a href="{% url 'loginPage' %}">
+            <button class="btn btn-outline-light btn-lg m-3">
+                Log In
+            </button>
+        </a><br>
+        
+
+    </div>
+</div>
+
+<div class="row" >
+</div>
+{% endblock body %}
+
+{% block js %}{% endblock js %}

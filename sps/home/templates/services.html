@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Smart Parking System: Service Page{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+<div class="row text-center justify-content-center align-items-center" style="height: 650px;">
+    <div class="col-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 base-card">
+        <h4>Choose a service: </h4><br>
+        <a href="{% url 'loginPage' %}">
+            <button class="btn btn-outline-light btn-lg">
+                Check In
+            </button>
+        </a><br>
+        <a href="{% url 'signupPage' %}">
+            <button class="btn btn-outline-light btn-lg m-3">
+                Check Out
+            </button>
+        </a><br>
+        <button class="btn btn-outline-light btn-lg">
+            Log Out
+        </button><br>
+        <small>
+            *Extra security fees will be applied if used without an account.
+        </small>
+    </div>
+</div>
+
+<div class="row" >
+</div>
+{% endblock body %}
+
+{% block js %}{% endblock js %}

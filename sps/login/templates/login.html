@@ -13,23 +13,27 @@
 
         <h4>Log In</h4><br>
 
-        <label for="basic-url" class="form-label d-flex justify-content-start">Enter Mobile Number:</label>
-        <div class="input-group mb-3">
-        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon1" placeholder="Mobile">
-        </div>
+        <form method="POST" action="{% url 'loginPage' %}">
+            {% csrf_token %}
+            <label for="basic-url" class="form-label d-flex justify-content-start">Enter Mobile Number:</label>
+            <div class="input-group mb-3">
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon1" placeholder="Mobile" name="mobile_number">
+            </div>
 
-        <label for="basic-url" class="form-label d-flex justify-content-start">Enter Password:</label>
-        <div class="input-group mb-3">
-        <input type="password" class="form-control" id="basic-url" aria-describedby="basic-addon1" placeholder="Password">
-        </div>
+            <label for="basic-url" class="form-label d-flex justify-content-start">Enter Password:</label>
+            <div class="input-group mb-3">
+            <input type="password" class="form-control" id="basic-url" aria-describedby="basic-addon1" placeholder="Password" name="pwd">
+            </div>
 
-        <small>
-            Don't have an account? <a href="{% url 'signupPage' %}"><u>Click here</u></a>, to signup.
-        </small>
+            <small>
+                Don't have an account? <a href="{% url 'signupPage' %}"><u>Click here</u></a>, to signup.
+            </small>
 
-        <button class="btn btn-outline-light btn-lg m-3">
-            Submit
-        </button><br>
+            <button class="btn btn-outline-light btn-lg m-3">
+                Submit
+            </button><br>
+        </form>
+        
 
     </div>
 </div>
