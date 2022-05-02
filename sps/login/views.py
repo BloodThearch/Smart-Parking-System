@@ -14,7 +14,7 @@ def loginPage(request):
             return render(request, 'unregisteredNumber.html')
         else:
             if (acc.pwd == passwd):
-                return render(request, 'services.html')
+                return render(request, 'services.html', {"acc": acc})
             else:
                 return render(request, 'wrongpwd.html')
     else:

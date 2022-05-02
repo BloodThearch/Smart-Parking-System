@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Smart Parking System: Service Page{% endblock title %}
+{% block title %}Smart Parking System: Home Page{% endblock title %}
 
 {% block css %}
 
@@ -11,29 +11,24 @@
 <div class="row text-center justify-content-center align-items-center" style="height: 650px;">
     <div class="col-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 base-card">
 
-        <h4>Choose a service: </h4><br>
+        <h4>Log In</h4><br>
 
-        <form method="POST" action="{% url 'checkin' %}">
+        <form method="POST" action="{% url 'checkinComp' %}">
             {% csrf_token %}
             <input type="hidden" value={{ acc.mobile_number }} name="mobile_number">
-            <button class="btn btn-outline-light btn-lg">
-                Check In
-            </button><br>
+            <label for="basic-url" class="form-label d-flex justify-content-start">Are you sure you want to check in?</label>
+            <button class="btn btn-outline-light btn-lg m-3">
+                Yes
+            </button>
         </form>
-
-        <form method="POST" action="{% url 'home' %}">
+        <form method="POST" action="{% url 'services' %}">
             {% csrf_token %}
             <input type="hidden" value={{ acc.mobile_number }} name="mobile_number">
             <button class="btn btn-outline-light btn-lg m-3">
-                Check Out
+                No
             </button><br>
         </form>
-
-        <a href="{% url 'home' %}">
-            <button class="btn btn-outline-light btn-lg">
-                Log Out
-            </button>
-        </a><br>
+        
 
     </div>
 </div>

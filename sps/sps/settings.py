@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'home',
     'login',
     'signup',
+    'checkin',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +64,8 @@ TEMPLATES = [
             os.path.join(BASE_DIR, 'home/templates'),
             os.path.join(BASE_DIR, 'login/templates'),
             os.path.join(BASE_DIR, 'signup/templates'),
+            os.path.join(BASE_DIR, 'checkin/templates'),
+            os.path.join(BASE_DIR, 'checkout/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -131,6 +135,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'home/static'),
     os.path.join(BASE_DIR, 'login/static'),
     os.path.join(BASE_DIR, 'signup/static'),
+    os.path.join(BASE_DIR, 'checkin/static'),
+    os.path.join(BASE_DIR, 'checkout/static'),
 ]
 
 # Default primary key field type

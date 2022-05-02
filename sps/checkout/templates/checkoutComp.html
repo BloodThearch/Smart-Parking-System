@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Smart Parking System: Sign Up Completed{% endblock title %}
+{% block title %}Smart Parking System: Check Out Completed{% endblock title %}
 
 {% block css %}
 
@@ -11,13 +11,14 @@
 <div class="row text-center justify-content-center align-items-center" style="height: 650px;">
     <div class="col-8 col-sm-7 col-md-6 col-lg-5 col-xl-4 base-card">
         <h4>Congratulations!</h4><br>
-        <small>You have successfully signed up for smart parking system service. 
-            Please click the button bellow to go back to home page and login to start using our service.</small><br>
-        <a href="{% url 'home' %}">
+        <small>Checked out successfully. Click the button below to go back to services page.</small><br>
+        <form method="POST" action="{% url 'services' %}">
+            {% csrf_token %}
+            <input type="hidden" value={{ acc.mobile_number }} name="mobile_number">
             <button class="btn btn-outline-light btn-lg m-3">
-                Home
+                Services
             </button>
-        </a><br>
+        </form><br>
     </div>
 </div>
 
