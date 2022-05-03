@@ -11,3 +11,9 @@ class ParkedVehicles(models.Model):
 
     def __str__(self):
         return str(self.time_in)
+
+class Slot(models.Model):
+    available_slots = models.IntegerField(primary_key=True)
+
+    def __str__(self):
+        return str(self.available_slots)

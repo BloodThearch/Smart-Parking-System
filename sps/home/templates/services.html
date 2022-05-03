@@ -21,7 +21,7 @@
             </button><br>
         </form>
 
-        <form method="POST" action="{% url 'home' %}">
+        <form method="POST" action="{% url 'checkout' %}">
             {% csrf_token %}
             <input type="hidden" value={{ acc.mobile_number }} name="mobile_number">
             <button class="btn btn-outline-light btn-lg m-3">

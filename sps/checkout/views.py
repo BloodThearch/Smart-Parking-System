@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from django.utils import timezone
 from login.models import Account
-from checkin.models import ParkedVehicles
+from checkin.models import ParkedVehicles, Slot
 from checkout.models import LeftVehicles
 
 # Create your views here.
@@ -29,9 +29,22 @@ def checkoutComp(request):
         else:
             try:
                 lf = LeftVehicles()
-                # to be continued
+                lf.mobile_number = acc;
+                lf.time_in = pv.time_in
+                lf.time_out = timezone.now()
+                duration = (lf.time_out - lf.time_in).total_seconds()/3600
+                rate = 10
+                lf.bill = rate * duration
+                lf.transaction_id = str(timezone.now().year)+str(timezone.now().month)+str(timezone.now().day)+str(timezone.now().hour)+str(timezone.now().minute)+str(timezone.now().second)
+                lf.save()
+                slot = Slot.objects.all()[0]
+                slot.available_slots = slot.available_slots + 1
+                slot.save()
+                slot = Slot.objects.all()[0]
+                slot.delete()
             except:
-                return render(request, 'checkin.html', {"acc": acc})
+                return render(request, 'checkout.html', {"acc": acc})
             else:
-                return render(request, 'checkinComp.html', {"acc": acc})
+                pv.delete()
+                return render(request, 'checkoutComp.html', {"acc": acc})
 
