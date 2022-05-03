@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.checkout, name="checkout"),
-    path('checkOutComp', views.checkoutComp, name="checkoutComp")
+    path('checkOutComp', views.checkoutComp, name="checkoutComp"),
 ]
